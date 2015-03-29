@@ -1,0 +1,12 @@
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\MvcApplication2.pdb
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\CaptchaMvc.dll
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.dll
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\CaptchaMvc.pdb
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\CaptchaMvc.xml
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.xml
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\obj\Release\MvcApplication2.dll
+C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\obj\Release\MvcApplication2.pdb

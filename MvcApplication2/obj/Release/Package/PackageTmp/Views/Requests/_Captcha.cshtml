@@ -1,0 +1,4 @@
+﻿@model CaptchaMvc.Models.BaseBuildInfoModel
+<img id="@Model.ImageElementId" src="@Model.ImageUrl" />
+<input name="@Model.InputElementId" class="form-control"/>
+<input type="hidden" name="@Model.TokenElementId" value="@Model.TokenValue"/>

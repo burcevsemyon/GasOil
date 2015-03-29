@@ -1,0 +1,30 @@
+﻿ @model GasOil.Models.ProductsPageModel
+ @{
+     var panelStyle = "width: 10em;";
+
+     if (!ViewBag.showAdminControls)
+     {
+         panelStyle += "position: absolute; left: 50px;";
+     }
+ }
+
+    <div class="panel panel-default center" style="@panelStyle">
+        <div class="panel-heading">
+            Категория</div>
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td>@Html.ActionLink("Все", "ShowProductsGroup", "Products", new { groupId = -1 }, null)
+                    </td>
+                </tr>
+                @foreach (var group in Model.ProductsGroups)
+                {
+
+                    <tr>
+                        <td>@Html.ActionLink(group.Name, "ShowProductsGroup", "Products", new { groupId = group.id }, null)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>

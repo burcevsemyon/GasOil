@@ -1,0 +1,20 @@
+﻿Code version: 6.1.37.86
+Assembly name CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6 mvid {a506bae8-b527-4c98-ba41-2a56ad94c187}
+* ref mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {fcb9dac8-ae3a-4886-93b0-f4cd5b0db0be}
+* ref System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {23916767-7e3a-4fab-ad85-0bb94082b2dd}
+* ref System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {e332d723-1405-4f29-af8b-ce2050c10687}
+* ref System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {c08d55d3-6463-439d-b112-60f6502ec141}
+* ref System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {2af80117-5fc8-4241-b8f1-bdd2c63e1750}
+* ref System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {0467f5c0-e463-4b2c-acc5-f718cb71f056}
+* ref System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {5cf0fd1d-1fd0-4bba-a252-1ada56614cc6}
+* ref System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {40c0730f-db39-4be9-b184-1864656f2572}
+* ref System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {9459c93d-5962-4eeb-ac3f-be1a71158463}

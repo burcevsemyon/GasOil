@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="Ticks" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="dbModelStoreContainer">
+    <EntitySet Name="Permission" EntityType="dbModel.Store.Permission" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="dbModel.Store.Products" store:Type="Tables" />
+    <EntitySet Name="ProductsGroup" EntityType="dbModel.Store.ProductsGroup" store:Type="Tables" />
+    <EntitySet Name="RegRequest" EntityType="dbModel.Store.RegRequest" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="dbModel.Store.Request" store:Type="Tables" />
+    <EntitySet Name="RequestCategory" EntityType="dbModel.Store.RequestCategory" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="dbModel.Store.Roles" store:Type="Tables" />
+    <EntitySet Name="UnitOfMeasurement" EntityType="dbModel.Store.UnitOfMeasurement" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="dbModel.Store.User" store:Type="Tables" />
+    <EntitySet Name="UserPermission" EntityType="dbModel.Store.UserPermission" store:Type="Tables" />
+    <AssociationSet Name="FK_Products_0" Association="dbModel.Store.FK_Products_0">
+      <End Role="UnitOfMeasurement" EntitySet="UnitOfMeasurement" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_1" Association="dbModel.Store.FK_Products_1">
+      <End Role="ProductsGroup" EntitySet="ProductsGroup" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_0" Association="dbModel.Store.FK_Request_0">
+      <End Role="RequestCategory" EntitySet="RequestCategory" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_0" Association="dbModel.Store.FK_User_0">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermission_0" Association="dbModel.Store.FK_UserPermission_0">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserPermission" EntitySet="UserPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermission_1" Association="dbModel.Store.FK_UserPermission_1">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="UserPermission" EntitySet="UserPermission" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="GroupId" Type="integer" />
+    <Property Name="UnitOfMeasurementId" Type="integer" />
+    <Property Name="ImageUrl" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="ProductsGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RegRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RegistrationNum" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReqTimeTicks" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PersonName" Type="nvarchar" />
+    <Property Name="PersonPhone" Type="nvarchar" MaxLength="30" />
+    <Property Name="PersonEmail" Type="nvarchar" />
+    <Property Name="Message" Type="nvarchar" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CategoryId" Type="integer" />
+  </EntityType>
+  <EntityType Name="RequestCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UnitOfMeasurement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedTime" Type="datetime" Nullable="false" />
+    <Property Name="OffTime" Type="datetime" />
+    <Property Name="RoleId" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PermissionId" Type="integer" Nullable="false" />
+    <Property Name="UserId" Type="integer" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Products_0">
+    <End Role="UnitOfMeasurement" Type="dbModel.Store.UnitOfMeasurement" Multiplicity="0..1" />
+    <End Role="Products" Type="dbModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasurement">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="UnitOfMeasurementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_1">
+    <End Role="ProductsGroup" Type="dbModel.Store.ProductsGroup" Multiplicity="0..1" />
+    <End Role="Products" Type="dbModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductsGroup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_0">
+    <End Role="RequestCategory" Type="dbModel.Store.RequestCategory" Multiplicity="0..1" />
+    <End Role="Request" Type="dbModel.Store.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_0">
+    <End Role="Roles" Type="dbModel.Store.Roles" Multiplicity="1" />
+    <End Role="User" Type="dbModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermission_0">
+    <End Role="User" Type="dbModel.Store.User" Multiplicity="1" />
+    <End Role="UserPermission" Type="dbModel.Store.UserPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPermission">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermission_1">
+    <End Role="Permission" Type="dbModel.Store.Permission" Multiplicity="1" />
+    <End Role="UserPermission" Type="dbModel.Store.UserPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPermission">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

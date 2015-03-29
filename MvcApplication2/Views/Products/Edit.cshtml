@@ -1,0 +1,62 @@
+﻿@model GasOil.Models.EditProductsPageModel
+@{
+    ViewBag.Title = Model.Product != null ? "Редактирование продукта" : "Создание продукта";
+
+    string formAction = Model.Product != null ? "SaveProduct" : "Add";
+
+    string submitButtonValue = Model.Product != null ? "Сохранить" : "Добавить";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(formAction, "Products"))
+{
+    if (Model.Product != null)
+    {
+        <input type="hidden" name="productId" value="@Model.Product.Id"/>
+    }
+    
+    <input type="hidden" name="oldGroupId" value="@ViewBag.groupId"/>
+    
+    <table class="table center" style="width: 50%; background-color: white;">
+        @if (Model.Product != null)
+        {
+            <tr><td>Наименование</td><td><input class="form-control" type="text" name="productName" value="@Model.Product.Name"/></td></tr>
+        }
+        else
+        {
+            <tr><td>Наименование</td><td><input class="form-control" type="text" name="productName" value=""/></td></tr>
+        }
+        
+        <tr><td>Категория</td><td>
+                                  <select class="form-control" name="groupId">
+                                      @foreach (var group in Model.ProductsGroups)
+                                      {
+                                          <option value="@group.id" @{
+                                          if (Model.Product != null && group.id == Model.Product.GroupId)
+                                          {
+                                              WriteLiteral("selected");
+                                          }
+                                                                    }>@group.Name</option>
+                                      }
+                                  </select>
+                              </td></tr>
+        <tr><td>Ед. измерения</td><td>
+                                      <select class="form-control" name="unitId">
+                                          @foreach (var unit in Model.UnitOfMeasurements)
+                                          {
+                                              <option value="@unit.id"@{
+                                                                          if (Model.Product != null && unit.id == Model.Product.UnitOfMeasurementId)
+                                                                          {
+                                                                              WriteLiteral("selected");
+                                                                          }
+                                                                      }>@unit.Name</option>
+                                          }
+                                      </select>
+                                  </td></tr>
+        <tr>
+            <td colspan="2" align="center"><input class="btn btn-default center" type="submit" value="@submitButtonValue"/></td>
+        </tr>
+    </table>
+    
+}
