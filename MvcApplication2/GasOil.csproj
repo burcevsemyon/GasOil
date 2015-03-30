@@ -284,11 +284,11 @@
     <Content Include="Images\home\slides\slide-1.JPG" />
     <Content Include="Images\home\slides\slide-2.jpg" />
     <Content Include="Images\home\slides\slide-3.jpg" />
-    <Content Include="Images\home\slides\slide-4.jpg" />
     <Content Include="Images\traffic\1920x1440_109264_[www.ArtFile.ru].jpg" />
     <Content Include="Images\traffic\8D7H04dy.jpg" />
     <Content Include="Images\traffic\autowp.ru_daf_xf105_34.jpg" />
     <Content Include="Images\traffic\daf_4_big.jpg" />
+    <Content Include="Images\traffic\slide-4.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />

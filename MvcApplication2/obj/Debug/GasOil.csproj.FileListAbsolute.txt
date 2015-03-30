@@ -10,3 +10,15 @@ C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplicatio
 C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.dll
 C:\Users\Semyon\Desktop\MvcApplication2-2014-12-03\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.pdb
+D:\MyProjects\GasOil\MvcApplication2\bin\MvcApplication2.dll
+D:\MyProjects\GasOil\MvcApplication2\bin\MvcApplication2.pdb
+D:\MyProjects\GasOil\MvcApplication2\bin\CaptchaMvc.dll
+D:\MyProjects\GasOil\MvcApplication2\bin\DotNetOpenAuth.AspNet.dll
+D:\MyProjects\GasOil\MvcApplication2\bin\DotNetOpenAuth.Core.dll
+D:\MyProjects\GasOil\MvcApplication2\bin\CaptchaMvc.pdb
+D:\MyProjects\GasOil\MvcApplication2\bin\CaptchaMvc.xml
+D:\MyProjects\GasOil\MvcApplication2\bin\DotNetOpenAuth.AspNet.xml
+D:\MyProjects\GasOil\MvcApplication2\bin\DotNetOpenAuth.Core.xml
+D:\MyProjects\GasOil\MvcApplication2\obj\Debug\ResolveAssemblyReference.cache
+D:\MyProjects\GasOil\MvcApplication2\obj\Debug\MvcApplication2.dll
+D:\MyProjects\GasOil\MvcApplication2\obj\Debug\MvcApplication2.pdb
