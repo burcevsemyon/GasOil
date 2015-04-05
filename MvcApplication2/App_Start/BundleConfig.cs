@@ -18,9 +18,9 @@ namespace GasOil
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));*/
 
-            bundles.Add(new ScriptBundle("~/bundles/slick").Include(
-            "~/Scripts/slick.js",
-            "~/Scripts/slick.app.js"));
+            bundles.Add(new ScriptBundle("~/bundles/productpassports").Include(
+            "~/Scripts/documents.gallery.js"));
+            
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
             "~/Scripts/bootstrap.js"));
 
@@ -31,6 +31,7 @@ namespace GasOil
             bundles.Add(new StyleBundle("~/Content/slick").Include(
                 "~/Content/slick.css",
                 "~/Content/slick-theme.css"));
+            
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
             //            "~/Content/themes/base/jquery.ui.core.css",
             //            "~/Content/themes/base/jquery.ui.resizable.css",

@@ -26,6 +26,12 @@ namespace GasOil
             );
 
             routes.MapRoute(
+                name: "ProductsPassports",
+                url: "products/passports/",
+                defaults: new { controller = "Products", action = "Passports"}
+            );
+
+            routes.MapRoute(
                 name: "Service",
                 url: "service/",
                 defaults: new { controller = "Service", action = "Index" }
