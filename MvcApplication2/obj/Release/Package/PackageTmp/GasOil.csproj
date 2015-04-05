@@ -281,16 +281,46 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\ajax-loader.gif" />
+    <Content Include="Images\documents\60-90. 2015.jpg" />
+    <Content Include="Images\documents\90-130.  2015.jpg" />
+    <Content Include="Images\documents\bitum 60-90 ТАИФ-page-001.jpg" />
+    <Content Include="Images\documents\certificates\Сертификат соответствия БНД 60-90 90-130 НОВОИЛ-page-001.jpg" />
+    <Content Include="Images\documents\certificates\Сертификат соответствия БНД 60-90 90-130 НОВОИЛ-page-002.jpg" />
+    <Content Include="Images\documents\certificates\Сертификат соответствия БНД 90-130 УНХ-page-001.jpg" />
+    <Content Include="Images\documents\certificates\Сертификат соответствия Топливо Дизельное-page-001.jpg" />
+    <Content Include="Images\documents\бензин 95премиум-page-001.jpg" />
+    <Content Include="Images\documents\Бензин регуляр 92.jpg" />
+    <Content Include="Images\documents\бензин80 нормаль-page-001.jpg" />
+    <Content Include="Images\documents\БНД 60-90 2015.jpg" />
+    <Content Include="Images\documents\БНД 60-90 НОВОИЛ-page-001.jpg" />
+    <Content Include="Images\documents\БНД 90-10.jpg" />
+    <Content Include="Images\documents\БНД 90-130 НОВОИЛ-page-001.jpg" />
+    <Content Include="Images\documents\БНД 90-130 Уфанефтехим-page-001.jpg" />
+    <Content Include="Images\documents\Мазут М100 %28вид VII%29-page-001.jpg" />
+    <Content Include="Images\documents\Мазут М100-page-001.jpg" />
+    <Content Include="Images\documents\Масло турбинное Тп-22Б-page-001.jpg" />
+    <Content Include="Images\documents\Паспорт Печка ТЁМНАЯ-page-001.jpg" />
+    <Content Include="Images\documents\Топливо Дизельное ЕВРО класс 2 вид 3-page-001.jpg" />
+    <Content Include="Images\documents\Топливо дизельное ЕВРО класс 2, вид II %28ДТ-4%29-page-001.jpg" />
+    <Content Include="Images\documents\Топливо дизельное ЕВРО класс 2, вид III %28ДТ-5%29-page-001.jpg" />
+    <Content Include="Images\documents\Топливо дизельное ЕВРО сорт Е, вид III %28ДТ-5%29-page-001.jpg" />
+    <Content Include="Images\documents\Топливо Дизельное ЕВРО сорт С вид 1-page-001.jpg" />
+    <Content Include="Images\documents\Топливо дизельное ЕВРО сорт С, вид III %28ДТ-5%29-page-001.jpg" />
+    <Content Include="Images\documents\Топливо дизельное зимнее.jpg" />
+    <Content Include="Images\documents\Топливо дизельное летнее.jpg" />
+    <Content Include="Images\documents\Топливо для реактивных двигателей РТ, высший сорт-page-001.jpg" />
     <Content Include="Images\home\slides\slide-1.JPG" />
     <Content Include="Images\home\slides\slide-2.jpg" />
     <Content Include="Images\home\slides\slide-3.jpg" />
-    <Content Include="Images\home\slides\slide-4.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\traffic\1920x1440_109264_[www.ArtFile.ru].jpg" />
     <Content Include="Images\traffic\8D7H04dy.jpg" />
     <Content Include="Images\traffic\autowp.ru_daf_xf105_34.jpg" />
     <Content Include="Images\traffic\daf_4_big.jpg" />
+    <Content Include="Images\traffic\slide-4.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\documents.gallery.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
@@ -306,9 +336,6 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\slick.app.js" />
-    <Content Include="Scripts\slick.js" />
-    <Content Include="Scripts\slick.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -365,6 +392,8 @@
     <Content Include="fonts\Ubuntu.ttf" />
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Traffic\Index.cshtml" />
+    <Content Include="Views\Products\ProductPassports.cshtml" />
+    <Content Include="Views\Products\ProductCertificates.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

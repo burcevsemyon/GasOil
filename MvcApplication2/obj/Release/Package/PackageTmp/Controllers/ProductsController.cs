@@ -31,6 +31,16 @@ namespace GasOil.Controllers
             return model;
         }
 
+        public ActionResult Passports()
+        {
+            return View("ProductPassports");
+        }
+
+        public ActionResult Certificates()
+        {
+            return View("ProductCertificates");
+        }
+
         public ActionResult Index()
         {
             ViewBag.groupId = -1;

@@ -24,7 +24,7 @@ namespace GasOil.Controllers
                     model = context.Requests.OrderByDescending(r => r.CreationTime).ToList();
                 }
             }
-            catch (Exception)
+            catch 
             {
             }
 
