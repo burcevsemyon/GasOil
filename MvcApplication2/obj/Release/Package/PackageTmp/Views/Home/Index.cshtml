@@ -1,25 +1,26 @@
 ﻿@{
     ViewBag.Title = "Главная";
-    var imageUrl = Url.Content("~/images/Untitled-1.png");
+
+    var p = DateTime.Now.Ticks.ToString();
 }
 
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox" style="height: 23em;">
         <div class="item active">
-            <img src="../../Images/home/slides/slide-1.jpg"  class="center-block"/>
+            <img src="../../Images/home/slides/slide-1.jpg?@p"  class="center-block"/>
             <div class="carousel-caption">
                 Общество с ограниченной ответственностью "ОПТИМУМ ИНТЕР ПАРЕC"
             </div>
         </div>
         <div class="item">
-            <img src="../../Images/home/slides/slide-2.jpg" class="center-block"/>
+            <img src="../../Images/home/slides/slide-2.jpg?@p" class="center-block"/>
             <div class="carousel-caption">
                 Общество с ограниченной ответственностью "ОПТИМУМ ИНТЕР ПАРЕC"
             </div>
         </div>
         <div class="item">
-            <img src="../../Images/home/slides/slide-3.jpg" class="center-block"/>
+            <img src="../../Images/home/slides/slide-3.jpg?@p" class="center-block"/>
             <div class="carousel-caption">
                 Общество с ограниченной ответственностью "ОПТИМУМ ИНТЕР ПАРЕC"
             </div>
