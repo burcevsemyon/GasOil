@@ -24,8 +24,9 @@ namespace GasOil.Controllers
                     model.ProductsGroups = context.ProductsGroups.ToList();
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                string str = ex.Message;
             }
 
             return model;

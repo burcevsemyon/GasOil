@@ -19,6 +19,5 @@ D:\MyProjects\GasOil\MvcApplication2\bin\CaptchaMvc.pdb
 D:\MyProjects\GasOil\MvcApplication2\bin\CaptchaMvc.xml
 D:\MyProjects\GasOil\MvcApplication2\bin\DotNetOpenAuth.AspNet.xml
 D:\MyProjects\GasOil\MvcApplication2\bin\DotNetOpenAuth.Core.xml
-D:\MyProjects\GasOil\MvcApplication2\obj\Debug\ResolveAssemblyReference.cache
 D:\MyProjects\GasOil\MvcApplication2\obj\Debug\MvcApplication2.dll
 D:\MyProjects\GasOil\MvcApplication2\obj\Debug\MvcApplication2.pdb
