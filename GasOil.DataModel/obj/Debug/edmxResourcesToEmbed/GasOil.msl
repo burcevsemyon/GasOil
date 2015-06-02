@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GasOilModelStoreContainer" CdmEntityContainer="GasOilEntities">
+    <EntitySetMapping Name="Table01">
+      <EntityTypeMapping TypeName="GasOilModel.Table01">
+        <MappingFragment StoreEntitySet="Table01">
+          <ScalarProperty Name="Field01" ColumnName="Field01" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

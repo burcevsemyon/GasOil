@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GasOilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Table01">
+    <Key>
+      <PropertyRef Name="Field01" />
+    </Key>
+    <Property Name="Field01" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="GasOilModelStoreContainer">
+    <EntitySet Name="Table01" EntityType="Self.Table01" Schema="u0049994_u0049994" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

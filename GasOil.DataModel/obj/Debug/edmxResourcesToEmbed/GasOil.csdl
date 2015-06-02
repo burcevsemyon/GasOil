@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GasOilModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Table01">
+    <Key>
+      <PropertyRef Name="Field01" />
+    </Key>
+    <Property Name="Field01" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="GasOilEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Table01" EntityType="Self.Table01" />
+  </EntityContainer>
+</Schema>

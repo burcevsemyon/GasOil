@@ -1,0 +1,9 @@
+D:\GasOil\GasOil.DataModel\bin\Debug\GasOil.DataModel.dll.config
+D:\GasOil\GasOil.DataModel\bin\Debug\GasOil.DataModel.dll
+D:\GasOil\GasOil.DataModel\bin\Debug\GasOil.DataModel.pdb
+D:\GasOil\GasOil.DataModel\bin\Debug\EntityFramework.dll
+D:\GasOil\GasOil.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\GasOil\GasOil.DataModel\bin\Debug\EntityFramework.xml
+D:\GasOil\GasOil.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\GasOil\GasOil.DataModel\obj\Debug\GasOil.DataModel.dll
+D:\GasOil\GasOil.DataModel\obj\Debug\GasOil.DataModel.pdb
