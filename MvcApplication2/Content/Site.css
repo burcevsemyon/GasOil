@@ -5,7 +5,7 @@ margin-right: auto;
 
 @font-face{
 	font-family: 'Ubuntu';
-	src: url('../fonts/Ubuntu.ttf');
+	src: url('fonts/Ubuntu.ttf');
 }
 
 p {

@@ -265,14 +265,11 @@
     <Content Include="bin\WebMatrix.WebData.dll" />
     <Content Include="bin\x64\SQLite.Interop.dll" />
     <Content Include="bin\x86\SQLite.Interop.dll" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\fonts\slick.svg" />
-    <Content Include="Content\slick-theme.css" />
-    <Content Include="Content\slick.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -414,12 +411,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\slick.eot" />
-    <Content Include="Content\fonts\slick.ttf" />
-    <Content Include="Content\fonts\slick.woff" />
+    <Content Include="Content\fonts\Ubuntu.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <None Include="db\db.db" />
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
     <Content Include="Views\Logistics\Index.cshtml" />
@@ -434,7 +429,6 @@
     <Content Include="Views\Requests\_Captcha.cshtml" />
     <Content Include="Views\Requests\Show.cshtml" />
     <Content Include="Views\Products\_ProductCategoryPanel.cshtml" />
-    <Content Include="fonts\Ubuntu.ttf" />
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Traffic\Index.cshtml" />
     <Content Include="Views\Products\ProductPassports.cshtml" />
