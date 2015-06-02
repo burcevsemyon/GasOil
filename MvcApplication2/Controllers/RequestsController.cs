@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using CaptchaMvc.HtmlHelpers;
-using GasOil.db;
+using MvcApplication2.db;
 
 namespace GasOil.Controllers
 {
@@ -19,7 +19,7 @@ namespace GasOil.Controllers
             var model = new List<Request>();
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     model = context.Requests.OrderByDescending(r => r.CreationTime).ToList();
                 }
@@ -37,7 +37,7 @@ namespace GasOil.Controllers
 
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     ViewBag.RequestCategories = context.RequestCategories.ToList();
                 }
@@ -53,12 +53,12 @@ namespace GasOil.Controllers
         {
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     var req = context.Requests.FirstOrDefault(r => r.Id == id);
                     if (req != null)
                     {
-                        context.Requests.DeleteObject(req);
+                        context.Requests.Remove(req);
                         context.SaveChanges();
                     }
                 }
@@ -75,7 +75,7 @@ namespace GasOil.Controllers
             var model = new List<Request>();
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     model = context.Requests.OrderByDescending(r => r.CreationTime).ToList();
                 }
@@ -116,7 +116,7 @@ namespace GasOil.Controllers
             {
                 try
                 {
-                    using (var context = new dbEntities())
+                    using (var context = new GasOilEntities())
                     {
                         var request = new Request
                         {
@@ -127,7 +127,7 @@ namespace GasOil.Controllers
                             CategoryId = categoryId
                         };
 
-                        context.Requests.AddObject(request);
+                        context.Requests.Add(request);
 
                         context.SaveChanges();
                     }

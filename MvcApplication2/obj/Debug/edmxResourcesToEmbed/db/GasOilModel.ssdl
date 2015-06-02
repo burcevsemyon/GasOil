@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GasOilModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=D:\MyProjects\GasOil\MvcApplication2\db\db.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="GroupId" Type="integer" />
+    <Property Name="UnitOfMeasurementId" Type="integer" />
+    <Property Name="ImageUrl" Type="varchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="ProductsGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegistrationNum" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReqTimeTicks" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type '' is currently not supported for the target Entity Framework version; the column 'main.Request' in the table 'PersonEmail' was excluded.-->
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonName" Type="varchar" MaxLength="2147483647" />
+    <Property Name="PersonPhone" Type="varchar" MaxLength="30" />
+    <Property Name="Message" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CategoryId" Type="integer" />
+  </EntityType>
+  <EntityType Name="RequestCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnitOfMeasurement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedTime" Type="datetime" Nullable="false" />
+    <Property Name="OffTime" Type="datetime" />
+    <Property Name="RoleId" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PermissionId" Type="integer" Nullable="false" />
+    <Property Name="UserId" Type="integer" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Products_0_0">
+    <End Role="UnitOfMeasurement" Type="Self.UnitOfMeasurement" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasurement">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="UnitOfMeasurementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_1_0">
+    <End Role="ProductsGroup" Type="Self.ProductsGroup" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductsGroup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_0_0">
+    <End Role="RequestCategory" Type="Self.RequestCategory" Multiplicity="0..1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_0_0">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermission_0_0">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPermission">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermission_1_0">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="1" />
+    <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPermission">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GasOilModelStoreContainer">
+    <EntitySet Name="Permission" EntityType="Self.Permission" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" store:Type="Tables" />
+    <EntitySet Name="ProductsGroup" EntityType="Self.ProductsGroup" store:Type="Tables" />
+    <EntitySet Name="RegRequest" EntityType="Self.RegRequest" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" store:Type="Tables" />
+    <EntitySet Name="RequestCategory" EntityType="Self.RequestCategory" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" store:Type="Tables" />
+    <EntitySet Name="UnitOfMeasurement" EntityType="Self.UnitOfMeasurement" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" />
+    <EntitySet Name="UserPermission" EntityType="Self.UserPermission" store:Type="Tables" />
+    <AssociationSet Name="FK_Products_0_0" Association="Self.FK_Products_0_0">
+      <End Role="UnitOfMeasurement" EntitySet="UnitOfMeasurement" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_1_0" Association="Self.FK_Products_1_0">
+      <End Role="ProductsGroup" EntitySet="ProductsGroup" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_0_0" Association="Self.FK_Request_0_0">
+      <End Role="RequestCategory" EntitySet="RequestCategory" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_0_0" Association="Self.FK_User_0_0">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermission_0_0" Association="Self.FK_UserPermission_0_0">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserPermission" EntitySet="UserPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermission_1_0" Association="Self.FK_UserPermission_1_0">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="UserPermission" EntitySet="UserPermission" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GasOil.db;
+using MvcApplication2.db;
 
 namespace GasOil.Controllers
 {
@@ -13,15 +13,15 @@ namespace GasOil.Controllers
         {
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     var request = context.RegRequests.FirstOrDefault(r => r.RegistrationNum == regNum);
                     if (request != null)
                     {
-                        context.Users.AddObject(new User{ Login = request.Login, Password = request.Password, Email = request.Email, CreatedTime = DateTime.Now, RoleId = 2});
+                        context.Users.Add(new User{ Login = request.Login, Password = request.Password, Email = request.Email, CreatedTime = DateTime.Now, RoleId = 2});
                     }
 
-                    context.RegRequests.DeleteObject(request);
+                    context.RegRequests.Add(request);
 
                     context.SaveChanges();
                 }
@@ -37,7 +37,7 @@ namespace GasOil.Controllers
         {
             //try
             //{
-            //    using (var context = new dbEntities())
+            //    using (var context = new GasOilEntities())
             //    {
             //        var users = context.Users.Select(u => u).ToList();
             //        ViewBag.users = users;

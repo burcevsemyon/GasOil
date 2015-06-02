@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using GasOil.db;
+using MvcApplication2.db;
 
 namespace GasOil.Models
 {

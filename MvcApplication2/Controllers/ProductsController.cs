@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GasOil.Models;
-using GasOil.db;
+using MvcApplication2.db;
 
 namespace GasOil.Controllers
 {
@@ -18,7 +18,7 @@ namespace GasOil.Controllers
             var model = new ProductsPageModel();
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     model.Products = context.Products.Where(p => groupId <= 0 || p.GroupId == groupId).Select(p => new ProductModel { Id = p.Id, Name = p.Name, UnitOfMeasurement = p.UnitOfMeasurement.Name }).ToList();
                     model.ProductsGroups = context.ProductsGroups.ToList();
@@ -54,11 +54,11 @@ namespace GasOil.Controllers
             var model = new List<ProductsGroup>();
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     var group = context.ProductsGroups.FirstOrDefault(g => g.id == groupId);
 
-                    context.ProductsGroups.DeleteObject(group);
+                    context.ProductsGroups.Remove(group);
 
                     context.SaveChanges();
 
@@ -77,7 +77,7 @@ namespace GasOil.Controllers
             ProductsGroup group = null;
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     group = context.ProductsGroups.FirstOrDefault(g => g.id == groupId);
                 }
@@ -95,7 +95,7 @@ namespace GasOil.Controllers
             ProductsGroup group = null;
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     group = context.ProductsGroups.FirstOrDefault(g => g.id == groupId);
 
@@ -117,7 +117,7 @@ namespace GasOil.Controllers
             var model = new List<ProductsGroup>();
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     model = context.ProductsGroups.ToList();
                 }
@@ -145,11 +145,11 @@ namespace GasOil.Controllers
 
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     var group = new ProductsGroup {Name = groupName};
 
-                    context.ProductsGroups.AddObject(group);
+                    context.ProductsGroups.Add(group);
 
                     context.SaveChanges();
                 }
@@ -175,7 +175,7 @@ namespace GasOil.Controllers
             var model = new EditProductsPageModel();
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     model.ProductsGroups = context.ProductsGroups.ToList();
                     model.UnitOfMeasurements = context.UnitOfMeasurements.ToList();
@@ -195,7 +195,7 @@ namespace GasOil.Controllers
             
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     var product = new Product
                                       {
@@ -204,7 +204,7 @@ namespace GasOil.Controllers
                                           UnitOfMeasurementId = unitId
                                       };
 
-                    context.Products.AddObject(product);
+                    context.Products.Add(product);
 
                     context.SaveChanges();
                 }
@@ -223,7 +223,7 @@ namespace GasOil.Controllers
             var model = new EditProductsPageModel();
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     model.Product = context.Products.FirstOrDefault(p => p.Id == productId);
                     model.ProductsGroups = context.ProductsGroups.ToList();
@@ -242,11 +242,11 @@ namespace GasOil.Controllers
         {   
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     var product = context.Products.FirstOrDefault(p => p.Id == productId);
 
-                    context.DeleteObject(product);
+                    context.Products.Remove(product);
 
                     context.SaveChanges();
                 }
@@ -264,7 +264,7 @@ namespace GasOil.Controllers
 
             try
             {
-                using (var context = new dbEntities())
+                using (var context = new GasOilEntities())
                 {
                     Product product = context.Products.FirstOrDefault(p => p.Id == productId);
 

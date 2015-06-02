@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using GasOil.BL.MailService;
-using GasOil.db;
+using MvcApplication2.db;
 using GasOil.db.Extensions;
 
 namespace GasOil
@@ -71,7 +71,7 @@ namespace GasOil
             {
                 try
                 {
-                    using (var context = new dbEntities())
+                    using (var context = new GasOilEntities())
                     {
                         if (context.GetUserExists(login))
                         {
@@ -90,7 +90,7 @@ namespace GasOil
                                 ReqTimeTicks = DateTime.Now
                             };
 
-                            context.RegRequests.AddObject(request);
+                            context.RegRequests.Add(request);
 
                             context.SaveChanges();
 
@@ -125,7 +125,7 @@ namespace GasOil
             {
                 try
                 {
-                    using (var context = new dbEntities())
+                    using (var context = new GasOilEntities())
                     {
                         var user = context.Users.FirstOrDefault(u => u.Login == login && u.Password == password);
                         if (user != null)
