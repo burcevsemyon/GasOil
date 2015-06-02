@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using CaptchaMvc.HtmlHelpers;
-using MvcApplication2.db;
+using GasOil.DataModel;
 
 namespace GasOil.Controllers
 {

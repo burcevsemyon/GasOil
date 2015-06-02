@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using GasOil.BL.MailService;
-using MvcApplication2.db;
+using GasOil.DataModel;
 using GasOil.db.Extensions;
 
 namespace GasOil

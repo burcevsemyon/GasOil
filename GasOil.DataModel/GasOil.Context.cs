@@ -25,6 +25,15 @@ namespace GasOil.DataModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table01> Table01 { get; set; }
+        public virtual DbSet<Permission> Permissions { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductsGroup> ProductsGroups { get; set; }
+        public virtual DbSet<RegRequest> RegRequests { get; set; }
+        public virtual DbSet<Request> Requests { get; set; }
+        public virtual DbSet<RequestCategory> RequestCategories { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<UnitOfMeasurement> UnitOfMeasurements { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserPermission> UserPermissions { get; set; }
     }
 }

@@ -5,7 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ce91fb2537484fedb3baa22591bd9541" Name="Diagram1">
-        <EntityTypeShape EntityType="GasOilModel.Table01" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasOilModel.Permission" Width="1.5" PointX="3" PointY="5.5" />
+        <EntityTypeShape EntityType="GasOilModel.Product" Width="1.5" PointX="8" PointY="5" />
+        <EntityTypeShape EntityType="GasOilModel.ProductsGroup" Width="1.5" PointX="5.75" PointY="8.375" />
+        <EntityTypeShape EntityType="GasOilModel.RegRequest" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GasOilModel.Request" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="GasOilModel.RequestCategory" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="GasOilModel.Role" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="GasOilModel.UnitOfMeasurement" Width="1.5" PointX="5.75" PointY="5.375" />
+        <EntityTypeShape EntityType="GasOilModel.User" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="GasOilModel.UserPermission" Width="1.5" PointX="5.25" PointY="1.375" />
+        <AssociationConnector Association="GasOilModel.PermissionId_Permission_Id" />
+        <AssociationConnector Association="GasOilModel.GroupId_ProductsGroup_id" />
+        <AssociationConnector Association="GasOilModel.UnitOfMeasurementId_UnitOfMeasurement_id" />
+        <AssociationConnector Association="GasOilModel.RoleId_Roles_id" />
+        <AssociationConnector Association="GasOilModel.UserId_User_Id" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
