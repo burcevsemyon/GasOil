@@ -1,13 +1,12 @@
 ﻿@model GasOil.Models.ProductsPageModel
 @{
-    ViewBag.Title = "Продукция";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Продукция";    
 
     bool showAdminControls = Session["login"] != null;
 
     ViewBag.showAdminControls = showAdminControls;
 }
-<div class="container-fluid" style="padding-top: 20px;">
+<div class="container-fluid" style="padding-top: 20px;">    
     @if (showAdminControls)
     {
         <div style="background-color: white; width: 12em; position: absolute; left: 50px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border: solid 1px #ddd;">
