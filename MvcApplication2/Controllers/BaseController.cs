@@ -10,6 +10,7 @@ using GasOil.db.Extensions;
 
 namespace GasOil
 {
+    [HandleError]
     public class BaseController : Controller
     {
         protected bool IsAuthorized()
@@ -17,9 +18,9 @@ namespace GasOil
             return !string.IsNullOrWhiteSpace((string)Session["login"]);
         }
 
-        protected override void OnResultExecuting(ResultExecutingContext filterContext)
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            base.OnResultExecuting(filterContext);
+            base.OnActionExecuting(filterContext);
 
             ViewBag.IsAuthorized = IsAuthorized();
         }

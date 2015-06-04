@@ -34,28 +34,7 @@ namespace GasOil.Controllers
         }
 
         public ActionResult Index()
-        {
-            //try
-            //{
-            //    using (var context = new GasOilEntities())
-            //    {
-            //        var users = context.Users.Select(u => u).ToList();
-            //        ViewBag.users = users;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    ViewBag.ErrorMessage = ex.Message;
-            //    while (ex.InnerException != null)
-            //    {
-            //        ViewBag.ErrorMessage += "\n";
-            //        ViewBag.ErrorMessage += ex.InnerException.Message;
-            //        ex = ex.InnerException;
-            //    }
-            //    ViewBag.StackTrace = ex.StackTrace;
-            //}
-
+        {   
             return View();
         }
 
