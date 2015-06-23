@@ -1,7 +1,6 @@
-﻿@model GasOil.db.ProductsGroup
+﻿@model GasOil.DataModel.ProductsGroup
 @{
     ViewBag.Title = "Изменить категорию";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using (Html.BeginForm("EditCategorу", "Products", new { groupId = Model.id }))

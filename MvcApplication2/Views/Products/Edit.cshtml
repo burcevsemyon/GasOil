@@ -5,8 +5,6 @@
     string formAction = Model.Product != null ? "SaveProduct" : "Add";
 
     string submitButtonValue = Model.Product != null ? "Сохранить" : "Добавить";
-
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using (Html.BeginForm(formAction, "Products"))
@@ -29,17 +27,23 @@
         }
         
         <tr><td>Категория</td><td>
-                                  <select class="form-control" name="groupId">
-                                      @foreach (var group in Model.ProductsGroups)
+            <select class="form-control" name="groupId">
+                <option value="0" @{
+                                      if (Model.Product != null && !Model.Product.GroupId.HasValue)
                                       {
-                                          <option value="@group.id" @{
-                                          if (Model.Product != null && group.id == Model.Product.GroupId)
-                                          {
-                                              WriteLiteral("selected");
-                                          }
-                                                                    }>@group.Name</option>
+                                          WriteLiteral("selected");
                                       }
-                                  </select>
+                                  }>Без категории</option>
+                @foreach (var group in Model.ProductsGroups)
+                {
+                    <option value="@group.id" @{
+                                                  if (Model.Product != null && group.id == Model.Product.GroupId)
+                                                  {
+                                                      WriteLiteral("selected");
+                                                  }
+                                              }>@group.Name</option>
+                }
+            </select>
                               </td></tr>
         <tr><td>Ед. измерения</td><td>
                                       <select class="form-control" name="unitId">

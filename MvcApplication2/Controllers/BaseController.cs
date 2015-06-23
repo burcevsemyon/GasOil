@@ -124,8 +124,7 @@ namespace GasOil
             }
             else
             {
-                try
-                {
+
                     using (var context = new GasOilEntities())
                     {
                         var user = context.Users.FirstOrDefault(u => u.Login == login && u.Password == password);
@@ -138,11 +137,6 @@ namespace GasOil
                             Session["loginError"] = "Пользователей  с такими логином и паролем не зарегистрированно.";
                         }
                     }
-                }
-                catch (Exception)
-                {
-                    Session["loginError"] = "Ошибка при обращении к БД. Обратитесь в службу поддержки.";
-                }
             }
 
             return RedirectToAction("Index");

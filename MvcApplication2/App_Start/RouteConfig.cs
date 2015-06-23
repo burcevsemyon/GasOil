@@ -20,13 +20,14 @@ namespace GasOil
             );
 
             routes.MapRoute(
-                name: "Products",
-                url: "products/{group}/{groupId}",
-                defaults: new { 
-                    controller = "Products", 
-                    action = "ShowProductsGroup",
-                    group = "group",
-                    groupId = -1 }
+                name: "ProductsShow",
+                url: "products/show/{groupId}",
+                defaults: new
+                {
+                    controller = "Products",
+                    action = "Show",
+                    groupId = 0
+                }
             );
 
             routes.MapRoute(

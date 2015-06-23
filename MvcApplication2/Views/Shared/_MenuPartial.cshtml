@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <ul class="nav navbar-nav">
             <li @{ if (controller == "Home" && action == "Index") { WriteLiteral("class=\"active\""); } }>@Html.ActionLink("Главная", "Index", "Home")</li>
-            <li @{ if (controller == "Products" && action == "ShowProductsGroup") { WriteLiteral("class=\"active\""); }}>@Html.RouteLink("Продукция", "Products", null, null)</li>
+            <li @{ if (controller == "Products" && action == "ShowProductsGroup") { WriteLiteral("class=\"active\""); }}>@Html.RouteLink("Продукция", "ProductsShow", null, null)</li>
             <li @{ if (controller == "Service") { WriteLiteral("class=\"active\""); }}>@Html.RouteLink("Услуги", "Service", null, null)</li>
             <li @{ if (controller == "Traffic") { WriteLiteral("class=\"active\""); }}>@Html.RouteLink("Автотранспорт", "Traffic", null, null)</li>
             <li class="dropdown @{ if (controller == "Products" && (action == "Passports" || action == "Certificates")) { WriteLiteral(" active"); }}">
