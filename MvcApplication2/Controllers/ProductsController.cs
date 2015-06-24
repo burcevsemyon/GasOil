@@ -13,12 +13,12 @@ namespace GasOil.Controllers
         //
         // GET: /Products/
 
-        private ProductsPageModel GetModel(int groupId)
+        private ProductsPageModel GetModel(long? groupId)
         {
             var model = new ProductsPageModel();
             using (var context = new GasOilEntities())
             {
-                model.Products = context.Products.Where(p => groupId == 0 || p.GroupId == groupId).Select(p => new ProductModel { Id = p.Id, Name = p.Name, UnitOfMeasurement = p.UnitOfMeasurement.Name }).ToList();
+                model.Products = context.Products.Where(p => p.GroupId == groupId).Select(p => new ProductModel { Id = p.Id, Name = p.Name, UnitOfMeasurement = p.UnitOfMeasurement.Name }).ToList();
                 model.ProductsGroups = context.ProductsGroups.ToList();
             }
 
@@ -37,7 +37,7 @@ namespace GasOil.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.groupId = -1;
+            ViewBag.groupId = null;
 
             return View("Index", GetModel(-1));
         }
@@ -149,9 +149,9 @@ namespace GasOil.Controllers
             return View("Index", GetModel(groupId));
         }
 
-        public ActionResult Show(int groupId)
+        public ActionResult Show(long? groupId)
         {
-            ViewBag.groupId = groupId;
+            ViewBag.groupId = groupId;            
 
             return View("Index", GetModel(groupId));
         }
