@@ -1,7 +1,7 @@
 ﻿@model GasOil.Models.EditProductsPageModel
 @{
     ViewBag.Title = Model.Product != null ? "Редактирование продукта" : "Создание продукта";
-    string formAction = Model.Product != null ? "SaveProduct" : "Add";
+    string formAction = Model.Product != null ? "Update" : "Add";
     string submitButtonValue = Model.Product != null ? "Сохранить" : "Добавить";
 }
 
@@ -9,10 +9,8 @@
 {
     if (Model.Product != null)
     {
-        Html.Hidden("productId", @Model.Product.Id);
+        @Html.Hidden("productId", @Model.Product.Id);
     }
-    
-    @Html.Hidden("oldGroupId", (int)@ViewBag.groupId);
     
     <table class="table center" style="width: 50%; background-color: white;">
         @if (Model.Product != null)
@@ -26,7 +24,7 @@
         
         <tr><td>Категория</td><td>
             <select class="form-control" name="groupId">
-                <option value="0" @{
+                <option @{
                                       if (Model.Product != null && !Model.Product.GroupId.HasValue)
                                       {
                                           WriteLiteral("selected");

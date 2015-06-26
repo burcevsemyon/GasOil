@@ -26,7 +26,7 @@ namespace GasOil
                 {
                     controller = "Products",
                     action = "Show",
-                    groupId = (long?)null
+                    groupId = (long?)-1
                 }
             );
 

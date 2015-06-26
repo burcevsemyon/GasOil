@@ -14,7 +14,7 @@
         <div class="panel-body">
             <table>
                 <tr>
-                    <td>@Html.RouteLink("Все", "ProductsShow", null, null)
+                    <td>@Html.RouteLink("Все", "ProductsShow", new { groupId = -1 }, null)
                     </td>
                 </tr>
                 @foreach (var group in Model.ProductsGroups)

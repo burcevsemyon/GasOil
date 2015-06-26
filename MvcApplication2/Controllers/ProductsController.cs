@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using GasOil.Models;
 using GasOil.DataModel;
+using MvcApplication2.BusinessObjects;
 
 namespace GasOil.Controllers
 {
@@ -18,7 +19,7 @@ namespace GasOil.Controllers
             var model = new ProductsPageModel();
             using (var context = new GasOilEntities())
             {
-                model.Products = context.Products.Where(p => p.GroupId == groupId).Select(p => new ProductModel { Id = p.Id, Name = p.Name, UnitOfMeasurement = p.UnitOfMeasurement.Name }).ToList();
+                model.Products = context.Products.Where(p => groupId == -1 || p.GroupId == groupId).Select(p => new ProductModel { Id = p.Id, Name = p.Name, UnitOfMeasurement = p.UnitOfMeasurement.Name }).ToList();
                 model.ProductsGroups = context.ProductsGroups.ToList();
             }
 
@@ -204,7 +205,7 @@ namespace GasOil.Controllers
             return View("Index", GetModel(groupId));
         }
 
-        public ActionResult Edit(int groupId, int productId)
+        public ActionResult Edit(long? groupId, int productId)
         {
             ViewBag.groupId = groupId;
 
@@ -246,31 +247,27 @@ namespace GasOil.Controllers
             return View("Index", GetModel(groupId));
         }
 
-        public ActionResult SaveProduct(int productId, int groupId, int oldGroupId, string productName, int? unitId)
+        [HttpPost]
+        public ActionResult Update(long productId, long? groupId, string productName, long? unitId)
         {
             ViewBag.groupId = groupId;
 
-            try
+            using (var context = new GasOilEntities())
             {
-                using (var context = new GasOilEntities())
+                var repository = new Repository(context);
+
+                var product = repository.GetProduct(productId);
+                if (product != null)
                 {
-                    Product product = context.Products.FirstOrDefault(p => p.Id == productId);
-
-                    if (product != null)
-                    {
-                        product.Name = productName;
-                        product.GroupId = groupId;
-                        product.UnitOfMeasurementId = unitId;                        
-                    }
-
-                    context.SaveChanges();
+                    product.Name = productName;
+                    product.GroupId = groupId;
+                    product.UnitOfMeasurementId = unitId;
                 }
-            }
-            catch
-            {
+
+                context.SaveChanges();
             }
 
-            return View("Index", GetModel(oldGroupId));
+            return View("Index", GetModel(groupId));
         }
     }
 }
