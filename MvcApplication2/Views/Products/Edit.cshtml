@@ -7,9 +7,10 @@
 
 @using (Html.BeginForm(formAction, "Products"))
 {
-    if (Model.Product != null)
+    if (Model.Product != null && Model.Product.ProductId.HasValue)
     {
-        @Html.Hidden("productId", @Model.Product.Id);
+        var productId = Model.Product.ProductId;
+        @Html.HiddenFor(m => productId)
     }
     
     <table class="table center" style="width: 50%; background-color: white;">

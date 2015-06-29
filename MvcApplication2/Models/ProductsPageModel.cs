@@ -3,13 +3,6 @@ using GasOil.DataModel;
 
 namespace GasOil.Models
 {
-    public class ProductModel
-    {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public string UnitOfMeasurement { get; set; }
-    }
-
     public class ProductsPageModel
     {
         public List<ProductModel> Products { get; set; }

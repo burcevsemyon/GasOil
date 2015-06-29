@@ -19,7 +19,7 @@ namespace GasOil.Controllers
             var model = new ProductsPageModel();
             using (var context = new GasOilEntities())
             {
-                model.Products = context.Products.Where(p => groupId == -1 || p.GroupId == groupId).Select(p => new ProductModel { Id = p.Id, Name = p.Name, UnitOfMeasurement = p.UnitOfMeasurement.Name }).ToList();
+                model.Products = context.Products.Where(p => groupId == -1 || p.GroupId == groupId).Select(p => new ProductModel { ProductId = p.Id, Name = p.Name, UnitOfMeasurementId = p.UnitOfMeasurementId, UnitOfMeasurementName = p.UnitOfMeasurement != null ? p.UnitOfMeasurement.Name: null }).ToList();
                 model.ProductsGroups = context.ProductsGroups.ToList();
             }
 
@@ -205,43 +205,34 @@ namespace GasOil.Controllers
             return View("Index", GetModel(groupId));
         }
 
-        public ActionResult Edit(long? groupId, int productId)
+        public ActionResult Edit(long? groupId, long productId)
         {
             ViewBag.groupId = groupId;
 
             var model = new EditProductsPageModel();
-            try
+            using (var context = new GasOilEntities())
             {
-                using (var context = new GasOilEntities())
-                {
-                    model.Product = context.Products.FirstOrDefault(p => p.Id == productId);
-                    model.ProductsGroups = context.ProductsGroups.ToList();
-                    model.UnitOfMeasurements = context.UnitOfMeasurements.ToList();
-                }
-            }
-            catch(Exception ex)
-            {
-                ViewBag.Error = ex.Message;
+                var repository = new Repository(context);
+                model.Product = repository.GetProductModel(productId);
+                model.ProductsGroups = context.ProductsGroups.ToList();
+                model.UnitOfMeasurements = context.UnitOfMeasurements.ToList();
             }
 
             return View("Edit", model);
         }
 
-        public ActionResult Delete(int groupId, int productId)
-        {   
-            try
+        public ActionResult Delete(int productId)
+        {
+            long? groupId = null;
+            using (var context = new GasOilEntities())
             {
-                using (var context = new GasOilEntities())
-                {
-                    var product = context.Products.FirstOrDefault(p => p.Id == productId);
+                var product = context.Products.FirstOrDefault(p => p.Id == productId);
+                if (product != null)
+                    groupId = product.GroupId;
 
-                    context.Products.Remove(product);
+                context.Products.Remove(product);
 
-                    context.SaveChanges();
-                }
-            }
-            catch
-            {
+                context.SaveChanges();
             }
 
             return View("Index", GetModel(groupId));

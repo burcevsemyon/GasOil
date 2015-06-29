@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 using GasOil.DataModel;
+using GasOil.Models;
 
 namespace MvcApplication2.BusinessObjects
 {
@@ -29,6 +28,17 @@ namespace MvcApplication2.BusinessObjects
         public List<UnitOfMeasurement> GetUnitOfMeasurement()
         {
             return _context.UnitOfMeasurements.ToList();
+        }
+        public ProductModel GetProductModel(long productId)
+        {
+            return _context.Products.Where(p => p.Id == productId).Select(
+                p => new ProductModel
+            {
+                ProductId = p.Id,
+                Name = p.Name,
+                UnitOfMeasurementId = p.UnitOfMeasurementId,
+                UnitOfMeasurementName = p.UnitOfMeasurement != null ? p.UnitOfMeasurement.Name : null
+            }).SingleOrDefault();
         }
     }
 }

@@ -48,12 +48,12 @@
             <tr>
                 <td>@product.Name
                 </td>
-                <td>@product.UnitOfMeasurement
+                <td>@product.UnitOfMeasurementName
                 </td>
                 @if (showAdminControls)
                 {
-                    <td>@Html.ActionLink("Удалить", "Delete", "Products", new { ViewBag.groupId, productId = product.Id }, new { @class = "btn btn-default", role = "button" })
-                        @Html.ActionLink("Изменить", "Edit", "Products", new { ViewBag.groupId, productId = product.Id }, new { @class = "btn btn-primary", role = "button" })
+                    <td>@Html.ActionLink("Удалить", "Delete", "Products", new { ViewBag.groupId, productId = product.ProductId }, new { @class = "btn btn-default", role = "button" })
+                        @Html.ActionLink("Изменить", "Edit", "Products", new { ViewBag.groupId, productId = product.ProductId }, new { @class = "btn btn-primary", role = "button" })
                     </td>
                 }
             </tr>
